@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/NikitaDotsenko/go/database"
+	"github.com/NikitaDotsenko/go/datastore"
 	"github.com/NikitaDotsenko/go/handler"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -15,9 +15,8 @@ func Welcome() echo.HandlerFunc {
 	}
 }
 
-
 func main() {
-	db, err := database.NewDB()
+	db, err := datastore.NewDB()
 	logFatal(err)
 
 	db.LogMode(true)
@@ -29,7 +28,6 @@ func main() {
 
 	e.GET("/", Welcome())
 	e.GET("/users", handler.GetUsers(db))
-
 
 	if err := e.Start(":3000"); err != nil {
 		log.Fatalln(err)

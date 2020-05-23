@@ -10,8 +10,6 @@ require (
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/go-siris/siris v7.4.0+incompatible // indirect
 	github.com/go-sql-driver/mysql v1.4.1
-	github.com/graphql-go/graphql v0.7.8
-	github.com/graphql-go/handler v0.2.3
 	github.com/jinzhu/gorm v1.9.12
 	github.com/kisielk/errcheck v1.2.0 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
