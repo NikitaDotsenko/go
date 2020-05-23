@@ -3,22 +3,14 @@ package main
 import (
 	"github.com/NikitaDotsenko/go/database"
 	"github.com/NikitaDotsenko/go/datastore"
+	"github.com/NikitaDotsenko/go/handler"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"log"
 	"net/http"
 	"time"
 )
-type User struct {
-	ID        uint      `gorm:"primary_key" json:"id"`
-	Name      string    `json:"name"`
-	Age       string    `json:"age"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
-	DeletedAt time.Time `json:"deleted_at"`
-}
 
-func (User) TableName() string { return "users" }
 func Welcome() echo.HandlerFunc {
 	return func(c echo.Context) error {
 		return c.String(http.StatusOK, "asd!")
