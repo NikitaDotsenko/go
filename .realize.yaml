@@ -1,0 +1,24 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: dockerized-go
+  path: /Users/nikitadocenko/projects/dockerized-go
+  commands:
+    install:
+      status: true
+      method: go build -o bin/main
+    run:
+      status: true
+      method: bin/main
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignore:
+      paths:
+      - .git
+      - .realize
+      - vendor

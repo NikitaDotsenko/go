@@ -1,4 +1,4 @@
-package datastore
+package database
 
 import (
 	"github.com/go-sql-driver/mysql"
@@ -12,7 +12,7 @@ func NewDB() (*gorm.DB, error) {
 		Passwd:               "root",
 		Net:                  "tcp",
 		Addr:                 "127.0.0.1:3306",
-		DBName:               "golang-with-echo-gorm-graphql-example_db",
+		DBName:               "go",
 		AllowNativePasswords: true,
 		Params: map[string]string{
 			"parseTime": "true",

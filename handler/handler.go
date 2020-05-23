@@ -1,13 +1,21 @@
 package handler
 
 import (
-	"net/http"
-
+	"github.com/NikitaDotsenko/go/domain/model"
+	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo"
+	"net/http"
 )
 
-func Welcome() echo.HandlerFunc {
+func GetUsers(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
-		return c.String(http.StatusOK, "Welcome!")
+		var u []*model.User
+
+		if err := db.Find(&u).Error; err != nil {
+			// error handling here
+			return err
+		}
+
+		return c.JSON(http.StatusOK, u)
 	}
 }
