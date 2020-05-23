@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
-	"github.com/dgrijalva/go/handler"
 	"log"
+	"github.com/NikitaDotsenko/go/handler"
 )
 
 func main() {

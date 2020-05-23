@@ -1,1 +1,1 @@
-module github.com/NikitaDotsenko/go
+module github.com/NikitaDotsenko/go/handler
