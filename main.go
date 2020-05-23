@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/NikitaDotsenko/go/handler"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"log"
-	"github.com/NikitaDotsenko/go/handler"
 )
 
 func main() {
