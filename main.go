@@ -2,13 +2,11 @@ package main
 
 import (
 	"github.com/NikitaDotsenko/go/database"
-	"github.com/NikitaDotsenko/go/datastore"
 	"github.com/NikitaDotsenko/go/handler"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"log"
 	"net/http"
-	"time"
 )
 
 func Welcome() echo.HandlerFunc {
@@ -19,7 +17,7 @@ func Welcome() echo.HandlerFunc {
 
 
 func main() {
-	db, err := datastore.NewDB()
+	db, err := database.NewDB()
 	logFatal(err)
 
 	db.LogMode(true)
