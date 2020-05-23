@@ -34,8 +34,4 @@ require (
 	golang.org/x/tools v0.0.0-20191026034945-b2104f82a97d // indirect
 	gopkg.in/urfave/cli.v2 v2.0.0-20190806201727-b62605953717 // indirect
 	gopkg.in/yaml.v2 v2.2.4 // indirect
-	github.com/NikitaDotsenko/go/handler v0.0.0
-)
-replace (
-	github.com/NikitaDotsenko/go/handler v0.0.0 => ./handler
 )
