@@ -1,0 +1,37 @@
+version: "3"
+
+volumes:
+  my-db:
+
+services:
+  go:
+    build:
+      context: .
+      dockerfile: docker/go/Dockerfile
+    links:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 33060:3306
+    environment:
+      - MYSQL_DATABASE=go
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - my-db:/var/lib/mysql
+
+  node:
+    image: node:8.16.1
+    entrypoint:
+      - /bin/bash
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+    tty: true
+    env_file:
+      - .env
+    environment:
+      - HOME=/var/www/html
